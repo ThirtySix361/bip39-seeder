@@ -196,7 +196,7 @@ def convert(string, breaking=False):
             print("result:", words)
             checksum(bits)
         except Exception as e:
-            log.error("please enter only words or numbers separated by space and between 1 and 2048")
+            log.error("please enter only valid words or numbers separated by space and between 1 and 2048")
 
     print("")
     if not breaking:
