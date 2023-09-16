@@ -97,7 +97,14 @@ checksum: 0101 is invalid!
 
 ## find the 12th or 24th word for your entropy
 
-enter your entropy 256 bits (for 24 words) or 128 bits (for 12 words):
+to find the last valid word for your bip39 checksum, you need an entropy by 128 bits for 12 words and 256 bits for 24 words.
+
+every word constis of 11 bits. <br>
+if you multiply 11 words by 11 bits you get 121 bits. <br>
+if you multiply 23 words with 11 bits, you get 253 bits. <br>
+
+so if you have 11 words, you need to add 7 random bits to get 128 bits.<br>
+if you have 23 words, you need to add 3 bits to get 256 bits.
 
 if you already have 11 words, enter them like:
 ```
@@ -126,7 +133,7 @@ hex: 700e8cbfa71360cfd8d01b690f295a3e
 sha: 0905997d956c94ecab5f96abb0ba312666f4528103da46f6872d2b44c7a34342
 valid checksum: 0000
 ```
-then append the response checksum to your entropy bits and get the words/indexes:
+then append the response checksum (in this case "0000") to the end of your entropy bits and get the words/indexes by:
 ```
 binary 011100000000111010001100101111111010011100010011011000001100111111011000110100000001101101101001000011110010100101011010001111100000
 ```
@@ -135,8 +142,8 @@ response:
 hybrid inner copper evolve current gun globe address harbor junk final lab
 897 932 384 626 433 832 795 28 841 971 693 993
 ```
-so the valid word would be "lab"
-you can verify by enter those 12 words like:
+so the valid last word would be "lab" <br>
+you can verify this by entering those 12 words like:
 ```
 hybrid inner copper evolve current gun globe address harbor junk final lab
 ```
@@ -153,6 +160,8 @@ hex: 700e8cbfa71360cfd8d01b690f295a3e
 sha: 0905997d956c94ecab5f96abb0ba312666f4528103da46f6872d2b44c7a34342
 checksum: 0000 is valid!
 ```
+
+Yeah!
 
 <hr>
 
