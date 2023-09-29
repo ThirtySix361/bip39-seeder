@@ -81,7 +81,6 @@ def checksum(bitstring, checksum=False):
         else:
             print("valid checksum:", "\033[92m" + format(int(sha256_hash[0], 16), '04b') + "\033[0m")
 
-
     elif len(bitstring) == 132:
 
         prev = bitstring[:128]
@@ -118,19 +117,17 @@ def checksum(bitstring, checksum=False):
         print("binary:", bitstring)
 
 def convert_binary(bitstring):
-    if len(bitstring) == 132 or len(bitstring) == 264:
-        bits = []
-        words = []
-        for i in range(0, len(bitstring), 11):
-            chunk = bitstring[i:i+11]
-            bits.append(str(int(chunk, 2)+1))
-            words.append(bip39[int(chunk, 2)])
-        #print(" ".join(words))
-        #print(" ".join(bits))
-        convert(" ".join(words))
-    else:
-        log.error("can only convert 132 or 264 binary string to words")
-        log.error("instead consider using: checksum <binary_string>")
+    bits = []
+    words = []
+    for i in range(0, len(bitstring), 11):
+        chunk = bitstring[i:i+11]
+        if len(chunk) != 11:
+            print("\033[91m" + "filling up " + str(11-len(chunk)) + " bits" + "\033[0m")
+        bits.append(str(int(chunk, 2)+1))
+        words.append(bip39[int(chunk, 2)])
+    #print(" ".join(words))
+    #print(" ".join(bits))
+    convert(" ".join(words))
 
 def convert(string, breaking=False):
 
@@ -150,7 +147,6 @@ def convert(string, breaking=False):
             log.error("please enter: checksum <binary_string>")
     elif targets[0] == "binary":
         try:
-            print("")
             convert_binary(targets[1])
         except Exception as e:
             print("")
