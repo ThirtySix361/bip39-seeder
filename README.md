@@ -3,8 +3,6 @@
 [![mail](https://img.shields.io/badge/Contact-dev%4036ip.de-blue?logo=maildotru)](mailto:dev@36ip.de)
 ![discord](https://img.shields.io/badge/Discord-.thirtysix-5865F2?style=flat&logo=discord)
 
-<hr>
-
 ## usecases:
 1. find word by index or index by word
 2. validate checksum for 12 or 24 words
