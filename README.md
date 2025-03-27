@@ -123,7 +123,7 @@ query: hybrid inner copper evolve current gun globe address harbor junk final
 result: 897 932 384 626 433 832 795 28 841 971 693
 binary: 0111000000001110100011001011111110100111000100110110000011001111110110001101000000011011011010010000111100101001010110100
 ```
-now take your entropy binary string and append 7 random bits, i choose "111110" for example. (if you use 23 words, you have to append only 3 random bits)
+now take your entropy binary string and append 7 random bits, i choose "0111110" for example. (if you use 23 words, you have to append only 3 random bits)
 
 now build the checksum:
 ```
@@ -142,8 +142,12 @@ binary 0111000000001110100011001011111110100111000100110110000011001111110110001
 ```
 response:
 ```
-hybrid inner copper evolve current gun globe address harbor junk final lab
-897 932 384 626 433 832 795 28 841 971 693 993
+query: hybrid inner copper evolve current gun globe address harbor junk final lab
+result: 897 932 384 626 433 832 795 28 841 971 693 993
+binary: 011100000000111010001100101111111010011100010011011000001100111111011000110100000001101101101001000011110010100101011010001111100000
+hex: 700e8cbfa71360cfd8d01b690f295a3e
+sha: 0905997d956c94ecab5f96abb0ba312666f4528103da46f6872d2b44c7a34342
+checksum: 0000 is valid!
 ```
 so the valid last word would be "lab" <br>
 you can verify this by entering those 12 words like:
